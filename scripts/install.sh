@@ -8,8 +8,14 @@ DEST="$HOME/.pi/agent/skills/research-mode"
 REPO="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
 
 if [[ ! -d "$DEST" ]]; then
-  echo "Error: $DEST does not exist. Is pi installed?" >&2
-  exit 1
+  ln -s "$REPO" "$DEST"
+  echo "Linked: $DEST -> $REPO"
+  exit 0
+fi
+
+if [[ "$(realpath "$DEST")" == "$REPO" ]]; then
+  echo "Already linked: $DEST -> $REPO (nothing to do)"
+  exit 0
 fi
 
 cp "$REPO/SKILL.md" "$DEST/SKILL.md"
