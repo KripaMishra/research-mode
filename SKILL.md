@@ -108,7 +108,7 @@ python scripts/log_research_step.py --artifact-dir <dir> --mode fallback \
 ## Core loop
 ### 1) Grill
 Use `references/grill-question-flow.md`.
-Keep questions short. Lock:
+Ask one question at a time. **Every question must be a numbered MCQ** (3–5 lettered options + a "→ Recommended:" line). Never ask open-ended questions. Lock:
 - objective
 - deliverable
 - research type
